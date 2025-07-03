@@ -9,7 +9,6 @@
 body {
     font-family: "Montserrat", sans-serif;
     padding-top: 80px;
-    height: 2000px; /* testando rolagem do header fixo */
     line-height: 1.6;
 }
 

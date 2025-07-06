@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     padding-top: 80px;
@@ -32,7 +36,6 @@ body {
     width: auto;
     display: block;
 }
-
 
 .nav-links ul {
     list-style: none;
@@ -66,7 +69,6 @@ body {
 .download-button a:hover {
     background-color: #dddddd;
 }
-
 
 .content {
     padding: 20px;
@@ -141,6 +143,61 @@ body {
     height: 100%;
 }
 
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 40px 20px 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+}
+
+.footer-top-link a {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-top-link a:hover {
+    background-color: #dddddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333333;
+    font-size: 0.9em;
+    color: #cccccc;
+}
 
 @media (max-width: 768px) {
     .header {
@@ -181,6 +238,11 @@ body {
     .software-video {
         max-width: 100%;
         width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 

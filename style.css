@@ -14,6 +14,11 @@ body {
     font-family: "Montserrat", sans-serif;
     padding-top: 80px;
     line-height: 1.6;
+    transition: filter 0.3s ease-in-out;
+}
+
+body.modal-open main, body.modal-open footer, body.modal-open header {
+    filter: blur(5px);
 }
 
 .header {
@@ -170,6 +175,102 @@ body {
     height: 100%;
 }
 
+.about-section {
+    padding: 70px 40px;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.team-member {
+    width: 120px;
+    height: 120px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url('./img/google.png'); /* Pode trocar por imagens individuais */
+    background-size: cover;
+    background-position: center;
+}
+
+.team-member:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-img {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    background-image: url('./img/google.png'); /* Imagem de exemplo */
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #555;
+    font-weight: 500;
+}
+
+
 .footer {
     background-color: #000000;
     color: #ffffff;
@@ -313,5 +414,10 @@ body {
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .team-member {
+        width: 100px;
+        height: 100px;
     }
 }

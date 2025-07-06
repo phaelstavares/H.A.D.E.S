@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#">Sobre a ferramenta</a></li>
-                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#sobre-nos">Sobre nós</a></li>
                 </ul>
             </nav>
 
@@ -35,7 +35,6 @@
     </header>
 
     <main>
-        <!-- Início -->
         <section class="inicio-section">
             <div class="inicio-text">
                 <h1>H.A.D.E.S</h1>
@@ -47,7 +46,6 @@
             </div>
         </section>
 
-        <!-- Sobre o Software -->
         <section class="software-section">
             <div class="software-text">
                 <h1>Sobre a Ferramenta</h1>
@@ -55,7 +53,6 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit molestiae laboriosam excepturi, reprehenderit magnam ullam consectetur aliquam perspiciatis dicta adipisci dignissimos vero reiciendis perferendis molestias quo praesentium, officiis obcaecati explicabo.</p> <br>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima natus, unde assumenda fugit aut esse, ut velit a veritatis pariatur eum quos fugiat illo delectus! Veritatis suscipit recusandae sed pariatur.</p>
             </div>
-
             <div class="software-video">
                 <div class="video-container">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/_fuimO6ErKI?si=Wxxap88k1zG9hO_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -63,63 +60,25 @@
             </div>
         </section>
 
-        <!-- Sobre o projeto -->
-        <div class="">
-            <div class="">
-                <img src="" alt="">
-                <h1></h1>
-                <p></p>
-            </div>
-
-            <div class="">
-                <img src="" alt="">
-                <h1></h1>
-                <p></p>
-            </div>
-
-            <div class="">
-                <img src="" alt="">
-                <h1></h1>
-                <p></p>
-            </div>
-
-            <div class="">
-                <img src="" alt="">
-                <h1></h1>
-                <p></p>
-            </div>
-
-            <div class="">
-                <img src="" alt="">
-                <h1></h1>
-                <p></p>
-            </div>
-
-            <div class="">
-                <img src="" alt="">
-                <h1></h1>
-                <p></p>
-            </div>
+        <div>
         </div>
 
-        <!-- Sobre nós -->
-        <div class="">
-            <div class="">
-                <h1></h1>
-                <p></p>
+        <section id="sobre-nos" class="about-section">
+            <div class="about-text">
+                <h1>Sobre Nós</h1>
+                <p>Somos um grupo de jovens profissionais em formação na área de SOC, unidos pelo interesse em tecnologia, inovação e segurança digital. Nosso objetivo é aprender, colaborar e aplicar nossos conhecimentos em projetos que contribuam para um ambiente tecnológico mais seguro e eficiente. Acreditamos que a segurança da informação é essencial em qualquer organização e por isso, este espaço foi criado para compartilhar nosso progresso, projetos, ideias e, principalmente, para conectar com quem compartilha da mesma paixão por tecnologia e cibersegurança.</p>
             </div>
-
-            <div class="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+            <div class="team-container">
+                <div class="team-member" data-member="1"></div>
+                <div class="team-member" data-member="2"></div>
+                <div class="team-member" data-member="3"></div>
+                <div class="team-member" data-member="4"></div>
+                <div class="team-member" data-member="5"></div>
+                <div class="team-member" data-member="6"></div>
+                <div class="team-member" data-member="7"></div>
+                <div class="team-member" data-member="8"></div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -141,6 +100,17 @@
         </div>
     </footer>
 
+    <div id="member-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <div id="modal-member-img" class="modal-img"></div>
+            <h2 id="modal-member-name"></h2>
+            <h3 id="modal-member-role"></h3>
+            <p id="modal-member-desc"></p>
+        </div>
+    </div>
+
+
     <script>
         const hamburger = document.querySelector('.hamburger-menu');
         const menu = document.querySelector('.header-menu');
@@ -150,6 +120,50 @@
             hamburger.classList.toggle('active');
             menu.classList.toggle('active');
             body.classList.toggle('menu-open');
+        });
+
+        const teamMembers = document.querySelectorAll('.team-member');
+        const modal = document.getElementById('member-modal');
+        const modalCloseButton = document.querySelector('.close-button');
+        const modalName = document.getElementById('modal-member-name');
+        const modalRole = document.getElementById('modal-member-role');
+        const modalDesc = document.getElementById('modal-member-desc');
+
+        const membersData = {
+            1: { name: 'Nome Membro 1', role: 'Cargo 1', description: 'Descrição sobre o membro 1.' },
+            2: { name: 'Nome Membro 2', role: 'Cargo 2', description: 'Descrição sobre o membro 2.' },
+            3: { name: 'Nome Membro 3', role: 'Cargo 3', description: 'Descrição sobre o membro 3.' },
+            4: { name: 'Nome Membro 4', role: 'Cargo 4', description: 'Descrição sobre o membro 4.' },
+            5: { name: 'Nome Membro 5', role: 'Cargo 5', description: 'Descrição sobre o membro 5.' },
+            6: { name: 'Nome Membro 6', role: 'Cargo 6', description: 'Descrição sobre o membro 6.' },
+            7: { name: 'Nome Membro 7', role: 'Cargo 7', description: 'Descrição sobre o membro 7.' },
+            8: { name: 'Nome Membro 8', role: 'Cargo 8', description: 'Descrição sobre o membro 8.' }
+        };
+
+        teamMembers.forEach(member => {
+            member.addEventListener('click', () => {
+                const memberId = member.getAttribute('data-member');
+                const data = membersData[memberId];
+
+                modalName.textContent = data.name;
+                modalRole.textContent = data.role;
+                modalDesc.textContent = data.description;
+
+                modal.classList.add('active');
+                body.classList.add('modal-open');
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('active');
+            body.classList.remove('modal-open');
+        };
+
+        modalCloseButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
         });
     </script>
 </body>

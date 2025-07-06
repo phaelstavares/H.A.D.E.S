@@ -72,6 +72,40 @@ body {
     padding: 20px;
 }
 
+.inicio-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 40px;
+    min-height: 85vh;
+}
+
+.inicio-section-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 30px;
+}
+
+.inicio-section-text h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.inicio-section-text p {
+    font-size: 1.2em;
+}
+
+.inicio-section-image {
+    flex: 1;
+    text-align: center;
+}
+
+.inicio-section-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -84,6 +118,17 @@ body {
 
     body {
         padding-top: 210px;
+    }
+
+    .inicio-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inicio-section-text {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
     }
 }
 

@@ -37,6 +37,12 @@ body {
     display: block;
 }
 
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -68,6 +74,27 @@ body {
 
 .download-button a:hover {
     background-color: #dddddd;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s linear;
 }
 
 .content {
@@ -201,16 +228,59 @@ body {
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        padding: 20px;
+        justify-content: space-between;
+        padding: 15px 20px;
     }
 
-    .nav-links {
-        padding: 15px 0;
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .header-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .header-menu.active {
+        transform: translateY(0);
+    }
+    
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        font-size: 1.5em;
     }
 
     body {
-        padding-top: 210px;
+        padding-top: 70px;
+    }
+
+    body.menu-open {
+        overflow: hidden;
     }
 
     .inicio-section {
@@ -243,22 +313,5 @@ body {
     .footer-content {
         flex-direction: column;
         text-align: center;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .nav-links ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    body {
-        padding-top: 270px;
-    }
-
-    .header {
-        gap: 15px;
     }
 }

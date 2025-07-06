@@ -13,17 +13,25 @@
             <img src="./img/google.png" alt="Logo H.A.D.E.S">
         </div>
 
-        <nav class="nav-links">
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre a ferramenta</a></li>
-                <li><a href="#">Sobre nós</a></li>
-            </ul>
-        </nav>
+        <div class="header-menu">
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#">Sobre a ferramenta</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </nav>
 
-        <div class="download-button">
-            <a href="#">Download</a>
+            <div class="download-button">
+                <a href="#">Download</a>
+            </div>
         </div>
+
+        <button class="hamburger-menu" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <main>
@@ -132,5 +140,17 @@
             <p>© 2025, H.A.D.E.S. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const menu = document.querySelector('.header-menu');
+        const body = document.querySelector('body');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+    </script>
 </body>
 </html>

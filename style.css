@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+a:focus, button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 html {
     scroll-behavior: smooth;
 }

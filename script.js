@@ -8,6 +8,18 @@ hamburger.addEventListener('click', () => {
   body.classList.toggle('menu-open');
 });
 
+const navLinks = document.querySelectorAll('.header-menu .nav-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (menu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+});
+
+
 const teamMembers = document.querySelectorAll('.team-member');
 const modal = document.getElementById('member-modal');
 const modalCloseButton = document.querySelector('.close-button');

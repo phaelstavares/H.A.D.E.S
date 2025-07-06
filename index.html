@@ -69,14 +69,14 @@
                 <p>Somos um grupo de jovens profissionais em formação na área de SOC, unidos pelo interesse em tecnologia, inovação e segurança digital. Nosso objetivo é aprender, colaborar e aplicar nossos conhecimentos em projetos que contribuam para um ambiente tecnológico mais seguro e eficiente. Acreditamos que a segurança da informação é essencial em qualquer organização e por isso, este espaço foi criado para compartilhar nosso progresso, projetos, ideias e, principalmente, para conectar com quem compartilha da mesma paixão por tecnologia e cibersegurança.</p>
             </div>
             <div class="team-container">
-                <div class="team-member" data-member="1"></div>
-                <div class="team-member" data-member="2"></div>
-                <div class="team-member" data-member="3"></div>
-                <div class="team-member" data-member="4"></div>
-                <div class="team-member" data-member="5"></div>
-                <div class="team-member" data-member="6"></div>
-                <div class="team-member" data-member="7"></div>
-                <div class="team-member" data-member="8"></div>
+                <div class="team-member equipe" data-member="1"></div>
+                <div class="team-member equipe" data-member="2"></div>
+                <div class="team-member equipe" data-member="3"></div>
+                <div class="team-member equipe" data-member="4"></div>
+                <div class="team-member equipe" data-member="5"></div>
+                <div class="team-member equipe" data-member="6"></div>
+                <div class="team-member colaborador" data-member="7"></div>
+                <div class="team-member colaborador" data-member="8"></div>
             </div>
         </section>
     </main>
@@ -102,7 +102,7 @@
 
     <div id="member-modal" class="modal-overlay">
         <div class="modal-content">
-            <button class="close-button">&times;</button>
+            <button class="close-button">×</button>
             <div id="modal-member-img" class="modal-img"></div>
             <h2 id="modal-member-name"></h2>
             <h3 id="modal-member-role"></h3>
@@ -125,29 +125,47 @@
         const teamMembers = document.querySelectorAll('.team-member');
         const modal = document.getElementById('member-modal');
         const modalCloseButton = document.querySelector('.close-button');
+        const modalImg = document.getElementById('modal-member-img');
         const modalName = document.getElementById('modal-member-name');
         const modalRole = document.getElementById('modal-member-role');
         const modalDesc = document.getElementById('modal-member-desc');
 
+        const loremText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.';
         const membersData = {
-            1: { name: 'Cassio', role: 'Equipe', description: 'Descrição.' },
-            2: { name: 'Ian', role: 'Equipe', description: 'Descrição.' },
-            3: { name: 'Júlia', role: 'Equipe', description: 'Descrição.' },
-            4: { name: 'Maria Julia', role: 'Equipe', description: 'Descrição.' },
-            5: { name: 'Raphael', role: 'Equipe', description: 'Descrição.' },
-            6: { name: 'Yasmin', role: 'Equipe', description: 'Descrição.' },
-            7: { name: 'Kainan', role: 'Colaborador', description: 'Descrição.' },
-            8: { name: 'Victor', role: 'Colaborador', description: 'Descrição.' }
+            1: { name: 'Cassio', role: 'Equipe', description: loremText, image: './img/avatar.png' },
+            2: { name: 'Ian', role: 'Equipe', description: loremText, image: './img/avatar.png' },
+            3: { name: 'Júlia', role: 'Equipe', description: loremText, image: './img/avatar.png' },
+            4: { name: 'Maria Julia', role: 'Equipe', description: loremText, image: './img/avatar.png' },
+            5: { name: 'Raphael', role: 'Equipe', description: loremText, image: './img/avatar.png' },
+            6: { name: 'Yasmin', role: 'Equipe', description: loremText, image: './img/avatar.png' },
+            7: { name: 'Kainan', role: 'Colaborador', description: loremText, image: './img/avatar.png' },
+            8: { name: 'Victor', role: 'Colaborador', description: loremText, image: './img/avatar.png' }
         };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            teamMembers.forEach(member => {
+                const memberId = member.getAttribute('data-member');
+                if (membersData[memberId] && membersData[memberId].image) {
+                    member.style.backgroundImage = `url('${membersData[memberId].image}')`;
+                }
+            });
+        });
 
         teamMembers.forEach(member => {
             member.addEventListener('click', () => {
                 const memberId = member.getAttribute('data-member');
                 const data = membersData[memberId];
 
+                modalImg.style.backgroundImage = `url('${data.image}')`;
                 modalName.textContent = data.name;
                 modalRole.textContent = data.role;
                 modalDesc.textContent = data.description;
+                
+                if (data.role === 'Equipe') {
+                    modalImg.style.backgroundColor = '#007bff';
+                } else if (data.role === 'Colaborador') {
+                    modalImg.style.backgroundColor = '#000000';
+                }
 
                 modal.classList.add('active');
                 body.classList.add('modal-open');

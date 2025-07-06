@@ -195,14 +195,20 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 .team-member {
     width: 120px;
     height: 120px;
-    background-color: #ccc;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-image: url('./img/icone-usuario.png'); /* Pode trocar por imagens individuais */
     background-size: cover;
     background-position: center;
 }
+
+.team-member.equipe {
+    background-color: #007bff;
+}
+.team-member.colaborador {
+    background-color: #000000;
+}
+
 
 .team-member:hover {
     transform: scale(1.1);
@@ -250,10 +256,8 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 .modal-img {
     width: 150px;
     height: 150px;
-    background-color: #ddd;
     border-radius: 50%;
     margin: 0 auto 20px auto;
-    background-image: url('./img/icone-usuario.png'); /* Imagem de exemplo */
     background-size: cover;
     background-position: center;
 }
@@ -268,6 +272,14 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     font-size: 1.2em;
     color: #555;
     font-weight: 500;
+}
+
+#modal-member-desc {
+    max-height: 150px;
+    overflow-y: auto;
+    text-align: left;
+    padding-right: 10px;
+    line-height: 1.5;
 }
 
 

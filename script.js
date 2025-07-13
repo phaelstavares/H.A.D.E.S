@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.querySelector('.carousel-button--left');
     const dotsNav = document.querySelector('.carousel-nav');
     const dots = Array.from(dotsNav.children);
+    const carouselContainer = document.querySelector('.carousel-container');
 
     const getSlidesToShow = () => {
         if (window.innerWidth <= 768) {
@@ -198,16 +199,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateArrows(0);
 
-    let autoplay = setInterval(() => {
-        const currentSlide = track.querySelector('.current-slide');
-        const currentIndex = slides.findIndex(slide => slide === currentSlide);
-        const slidesToShow = getSlidesToShow();
-        
-        if (currentIndex >= slides.length - slidesToShow) {
-            moveToSlide(0);
-            updateArrows(0);
-        } else {
-            nextButton.click();
-        }
-    }, 5000);
+    const startAutoplay = () => {
+        return setInterval(() => {
+            const currentSlide = track.querySelector('.current-slide');
+            const currentIndex = slides.findIndex(slide => slide === currentSlide);
+            const slidesToShow = getSlidesToShow();
+            
+            let nextIndex = currentIndex + 1;
+            if (nextIndex > slides.length - slidesToShow) {
+                nextIndex = 0;
+            }
+            moveToSlide(nextIndex);
+            updateArrows(nextIndex);
+        }, 5000);
+    }
+    
+    let autoplay = startAutoplay();
+
+    carouselContainer.addEventListener('mouseenter', () => clearInterval(autoplay));
+    carouselContainer.addEventListener('mouseleave', () => autoplay = startAutoplay());
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll('.inicio-text, .inicio-image, .software-text, .software-video, .carousel-title, .carousel-container, .about-text, .team-container, .download-content');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
 });

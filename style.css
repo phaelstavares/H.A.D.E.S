@@ -27,7 +27,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 }
 
 .header {
-    background-color: #000000;
+    background-color: #121212;
     color: #ffffff;
     padding: 15px 40px;
     position: fixed;
@@ -35,10 +35,10 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     left: 0;
     width: 100%;
     z-index: 1000;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
@@ -117,6 +117,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     justify-content: space-around;
     padding: 50px 40px;
     min-height: 85vh;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #f9f9f9 100%);
 }
 
 .inicio-text {
@@ -126,8 +127,9 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 }
 
 .inicio-text h1 {
-    font-size: 3.5em;
+    font-size: 3.2em;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .inicio-text p {
@@ -225,6 +227,13 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     border-radius: 15px;
     text-align: center;
     height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 5, 74, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 5, 74, 0.3);
 }
 
 .carousel-content img {
@@ -248,20 +257,28 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent;
+    background: rgba(255, 255, 255, 0.9);
     border: 0;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
     z-index: 1;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .carousel-button:hover {
     transform: translateY(-50%) scale(1.1);
+    background: #ffffff;
 }
 
 .carousel-button img {
-    width: 30px;
-    filter: invert(1);
+    width: 25px;
+    filter: none;
 }
 
 .carousel-button--left {
@@ -409,11 +426,14 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 5, 74, 0.2);
 }
 
 .download-button-main a:hover {
-    opacity: 0.9;
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 5, 74, 0.3);
 }
 
 .decorative-hexagons .hexagon {
@@ -515,9 +535,8 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     line-height: 1.5;
 }
 
-
 .footer {
-    background-color: #000000;
+    background-color: #121212;
     color: #ffffff;
     padding: 40px 40px 20px 40px;
 }
@@ -571,6 +590,18 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     font-size: 0.9em;
     color: #cccccc;
 }
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 @media (max-width: 1024px) {
     .carousel-slide {

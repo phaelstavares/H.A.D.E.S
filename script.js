@@ -114,3 +114,106 @@ modal.addEventListener('click', (event) => {
     closeModal();
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button--right');
+    const prevButton = document.querySelector('.carousel-button--left');
+    const dotsNav = document.querySelector('.carousel-nav');
+    const dots = Array.from(dotsNav.children);
+
+    const getSlidesToShow = () => {
+        if (window.innerWidth <= 768) {
+            return 1;
+        } else if (window.innerWidth <= 1024) {
+            return 2;
+        }
+        return 3;
+    };
+
+    let slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+
+    const setupCarousel = () => {
+        slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+        const currentSlide = track.querySelector('.current-slide');
+        const currentIndex = slides.findIndex(slide => slide === currentSlide);
+        
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+        track.offsetHeight; 
+        track.style.transition = 'transform 0.5s ease-in-out';
+    };
+
+    window.addEventListener('resize', setupCarousel);
+    
+    const moveToSlide = (targetIndex) => {
+        const targetSlide = slides[targetIndex];
+        track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
+
+        const currentSlide = track.querySelector('.current-slide');
+        currentSlide.classList.remove('current-slide');
+        targetSlide.classList.add('current-slide');
+        
+        const currentDot = dotsNav.querySelector('.current-slide');
+        currentDot.classList.remove('current-slide');
+        dots[targetIndex].classList.add('current-slide');
+    };
+
+    const updateArrows = (targetIndex) => {
+        const slidesToShow = getSlidesToShow();
+        prevButton.classList.toggle('is-hidden', targetIndex === 0);
+        nextButton.classList.toggle('is-hidden', targetIndex >= slides.length - slidesToShow);
+    };
+
+    nextButton.addEventListener('click', () => {
+        const currentSlide = track.querySelector('.current-slide');
+        const currentIndex = slides.findIndex(slide => slide === currentSlide);
+        const nextIndex = currentIndex + 1;
+
+        moveToSlide(nextIndex);
+        updateArrows(nextIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+        const currentSlide = track.querySelector('.current-slide');
+        const currentIndex = slides.findIndex(slide => slide === currentSlide);
+        const prevIndex = currentIndex - 1;
+
+        moveToSlide(prevIndex);
+        updateArrows(prevIndex);
+    });
+
+    dotsNav.addEventListener('click', e => {
+        const targetDot = e.target.closest('button.carousel-indicator');
+        if (!targetDot) return;
+        
+        const targetIndex = dots.findIndex(dot => dot === targetDot);
+        
+        moveToSlide(targetIndex);
+        updateArrows(targetIndex);
+    });
+
+    updateArrows(0);
+
+    // Alteração: Início da função para rotação automática do carrossel
+    const AUTOPLAY_DELAY = 5000; // 5 segundos
+
+    let autoplay = setInterval(() => {
+        const currentSlide = track.querySelector('.current-slide');
+        const currentIndex = slides.findIndex(slide => slide === currentSlide);
+        const slidesToShow = getSlidesToShow();
+        
+        // Verifica se chegou ao final
+        if (currentIndex >= slides.length - slidesToShow) {
+            moveToSlide(0); // Volta para o primeiro slide
+            updateArrows(0);
+        } else {
+            nextButton.click(); // Simula o clique no botão de próximo
+        }
+    }, AUTOPLAY_DELAY);
+    // Alteração: Fim da função para rotação automática
+});

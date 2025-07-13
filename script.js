@@ -8,8 +8,8 @@ hamburger.addEventListener('click', () => {
   body.classList.toggle('menu-open');
 });
 
-const navLinks = document.querySelectorAll('.header-menu .nav-links a');
-navLinks.forEach(link => {
+const menuLinks = document.querySelectorAll('.header-menu a'); 
+menuLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (menu.classList.contains('active')) {
             hamburger.classList.remove('active');
@@ -198,8 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateArrows(0);
 
-    const AUTOPLAY_DELAY = 5000;
-
     let autoplay = setInterval(() => {
         const currentSlide = track.querySelector('.current-slide');
         const currentIndex = slides.findIndex(slide => slide === currentSlide);
@@ -211,5 +209,5 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             nextButton.click();
         }
-    }, AUTOPLAY_DELAY);
+    }, 5000);
 });

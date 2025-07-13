@@ -19,7 +19,6 @@ navLinks.forEach(link => {
     });
 });
 
-
 const teamMembers = document.querySelectorAll('.team-member');
 const modal = document.getElementById('member-modal');
 const modalCloseButton = document.querySelector('.close-button');
@@ -93,7 +92,7 @@ teamMembers.forEach(member => {
     modalDesc.textContent = description;
 
     if (data.role === 'Equipe') {
-      modalImg.style.backgroundColor = '#007bff';
+      modalImg.style.backgroundColor = '#00054A';
     } else if (data.role === 'Colaborador') {
       modalImg.style.backgroundColor = '#000000';
     }
@@ -199,21 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateArrows(0);
 
-    // Alteração: Início da função para rotação automática do carrossel
-    const AUTOPLAY_DELAY = 5000; // 5 segundos
+    const AUTOPLAY_DELAY = 5000;
 
     let autoplay = setInterval(() => {
         const currentSlide = track.querySelector('.current-slide');
         const currentIndex = slides.findIndex(slide => slide === currentSlide);
         const slidesToShow = getSlidesToShow();
         
-        // Verifica se chegou ao final
         if (currentIndex >= slides.length - slidesToShow) {
-            moveToSlide(0); // Volta para o primeiro slide
+            moveToSlide(0);
             updateArrows(0);
         } else {
-            nextButton.click(); // Simula o clique no botão de próximo
+            nextButton.click();
         }
     }, AUTOPLAY_DELAY);
-    // Alteração: Fim da função para rotação automática
 });

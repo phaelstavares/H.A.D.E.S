@@ -219,7 +219,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 }
 
 .carousel-content {
-    background-color: #111;
+    background-color: #00054A;
     color: white;
     padding: 30px;
     border-radius: 15px;
@@ -261,7 +261,6 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 
 .carousel-button img {
     width: 30px;
-    /* Alteração: Inverte a cor da imagem da seta (de branco para preto) para torná-la visível */
     filter: invert(1);
 }
 
@@ -327,7 +326,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 }
 
 .team-member.equipe {
-    background-color: #007bff;
+    background-color: #00054A;
 }
 .team-member.colaborador {
     background-color: #000000;
@@ -338,6 +337,115 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+
+#download-section {
+    background-color: #ffffff;
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-area-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.download-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.download-logo img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.download-text {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.terms-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.terms-info .info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid #555;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.terms-info a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.download-button-main a {
+    display: inline-block;
+    background-color: #00054A;
+    color: #fff;
+    padding: 14px 45px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.download-button-main a:hover {
+    opacity: 0.9;
+}
+
+.decorative-hexagons .hexagon {
+    position: absolute;
+    width: 200px;
+    height: 230px;
+    background-color: #00054A;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.decorative-hexagons .hex1 {
+    width: 250px;
+    height: 288px;
+    left: -120px;
+    top: 50px;
+}
+
+.decorative-hexagons .hex2 {
+    width: 150px;
+    height: 173px;
+    left: -50px;
+    top: 350px;
+}
+
+.decorative-hexagons .hex3 {
+    width: 80px;
+    height: 92px;
+    left: -20px;
+    top: 550px;
+}
+
 
 .modal-overlay {
     position: fixed;
@@ -575,5 +683,9 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     .team-member {
         width: 100px;
         height: 100px;
+    }
+
+    .decorative-hexagons {
+        display: none;
     }
 }

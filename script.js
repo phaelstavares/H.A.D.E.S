@@ -29,45 +29,35 @@ const modalDesc = document.getElementById('modal-member-desc');
 
 const membersData = {
   1: {
-    name: 'Cassio',
+    name: 'Cassio do Nascimento',
     role: 'Equipe',
     image: './img/google.png'
   },
   2: {
-    name: 'Ian',
+    name: 'Ian Lima',
     role: 'Equipe',
     image: './img/google.png'
   },
   3: {
-    name: 'Júlia',
+    name: 'Júlia Araújo',
     role: 'Equipe',
     image: './img/google.png'
   },
   4: {
-    name: 'Maria Julia',
+    name: 'Maria Julia Pina',
     role: 'Equipe',
     image: './img/google.png'
   },
   5: {
-    name: 'Raphael',
+    name: 'Raphael Tavares',
     role: 'Equipe',
     image: './img/google.png'
   },
   6: {
-    name: 'Yasmin',
+    name: 'Yasmin Rufino',
     role: 'Equipe',
     image: './img/google.png'
   },
-  7: {
-    name: 'Kainan',
-    role: 'Colaborador',
-    image: './img/google.png'
-  },
-  8: {
-    name: 'Victor',
-    role: 'Colaborador',
-    image: './img/google.png'
-  }
 };
 
 document.addEventListener('DOMContentLoaded', () => {

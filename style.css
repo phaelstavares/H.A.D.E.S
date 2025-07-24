@@ -169,7 +169,6 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     z-index: 2;
 }
 
-/* === ESTILO PADRÃO PARA TÍTULOS DE SEÇÃO === */
 .software-text h1, .about-text h1 {
     font-size: 2.2em;
     margin-bottom: 20px;
@@ -207,7 +206,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 
 .carousel-title {
     margin-bottom: 50px;
-    font-size: 2.2em; /* MODIFICADO: Reduzido para o tamanho padrão */
+    font-size: 2.2em;
 }
 
 .carousel-container {
@@ -236,39 +235,38 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     box-sizing: border-box;
 }
 
-/* === ESTILOS NOVOS E ATUALIZADOS PARA O CARROSSEL === */
 .carousel-card {
-    background-color: #ffffff; /* Fundo branco para o card */
-    border-radius: 16px; /* Bordas mais arredondadas para um visual suave */
-    text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+    background-color: #ffffff;
+    border-radius: 16px;
+    text-align: left;
     height: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que a imagem com cantos arredondados não vaze */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
 .carousel-card:hover {
-    transform: translateY(-8px); /* Efeito de elevação mais pronunciado */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-image-container {
     width: 100%;
-    height: 220px; /* Altura fixa para a imagem, dando mais destaque */
+    height: 220px;
     overflow: hidden;
 }
 
 .carousel-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    object-fit: cover;
     display: block;
 }
 
 .carousel-text-content {
-    padding: 25px; /* Espaçamento interno para o texto */
+    padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -277,16 +275,15 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 .carousel-text-content h3 {
     margin-bottom: 15px;
     font-size: 1.5em;
-    color: #00054A; /* Cor de destaque do site para consistência */
+    color: #00054A;
 }
 
 .carousel-text-content p {
     font-size: 1em;
     line-height: 1.5;
-    color: #333333; /* Cor de texto padrão para boa leitura */
+    color: #333333;
     flex-grow: 1;
 }
-/* === FIM DOS ESTILOS DO CARROSSEL === */
 
 .carousel-button {
     position: absolute;
@@ -632,7 +629,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 }
 
 .footer-top-link:hover {
-    background-color: #2a7aed;
+    /* background-color: #2a7aed; */
     transform: translateY(-2px);
 }
 

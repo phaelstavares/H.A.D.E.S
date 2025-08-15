@@ -29,7 +29,7 @@ const modalDesc = document.getElementById('modal-member-desc');
 const membersData = {
   1: {
     name: 'Cassio do Nascimento',
-    image: './img/google.png',
+    image: './img/icone-avatar.png',
     description: `Sou Cassio do Nascimento Costa, tenho 19 anos e estou iniciando minha trajetória na área de Tecnologia da Informação, com foco em Segurança Cibernética. Atualmente, curso Auxiliar Técnico em SOC (Security Operations Center), onde estou desenvolvendo conhecimentos práticos em monitoramento de redes, análise de incidentes e resposta a ameaças. <br><br>
 
     Possuo conhecimentos básicos em desenvolvimento web adquiridos através do curso “Meu Primeiro Site”, com foco em HTML e CSS, o que me proporcionou uma base sólida para entender estruturas e comportamentos de aplicações web, habilidade essencial no contexto de segurança cibernética. <br><br>
@@ -38,7 +38,7 @@ const membersData = {
   },
   2: {
     name: 'Ian Lima',
-    image: './img/google.png',
+    image: './img/icone-avatar.png',
     description: `Sou Ian Lima, tenho 18 anos e estou em formação na área de Tecnologia da Informação, com foco em Segurança Ofensiva. Atualmente, curso Defesa Cibernética e Auxiliar Técnico em SOC, o que tem me proporcionado uma base sólida em análise de vulnerabilidades, simulações de ataques e estratégias de proteção de sistemas. <br><br>
 
     Tenho grande interesse em áreas como testes de invasão (pentest), engenharia social e hacking ético, buscando constantemente aprimorar meus conhecimentos em ambientes controlados e de estudo. <br><br>
@@ -47,7 +47,7 @@ const membersData = {
   },
   3: {
     name: 'Júlia Araújo',
-    image: './img/google.png',
+    image: './img/icone-avatar.png',
     description: `Sou Júlia, tenho 18 anos e estou em formação na área de Tecnologia da Informação, com foco em Segurança da Informação. Atualmente, curso Auxiliar Técnico em SOC (Security Operations Center), onde desenvolvo competências em monitoramento de eventos, triagem de alertas e identificação de comportamentos suspeitos. <br><br>
 
     Minha trajetória inclui a conclusão do curso de Técnico em Informática, que me proporcionou uma base sólida em redes, sistemas operacionais e suporte técnico. Também possuo formação em Fundamentos de Inteligência Artificial, ampliando minha compreensão sobre como a IA pode ser aplicada na detecção e resposta a ameaças cibernéticas. <br><br>
@@ -56,7 +56,7 @@ const membersData = {
   },
   4: {
     name: 'Maria Julia Pina',
-    image: './img/google.png',
+    image: './img/icone-avatar.png',
     description: `Sou Maria Júlia Pina, tenho 18 anos e estou em formação na área de Tecnologia da Informação, com foco em Segurança Cibernética. Atualmente curso Análise e Desenvolvimento de Sistemas e Auxiliar Técnico em SOC, onde estou desenvolvendo competências em monitoramento de redes, análise de vulnerabilidades e resposta a incidentes de segurança. <br><br>
 
     Possuo experiências anteriores em desenvolvimento front-end e back-end, o que me proporciona uma visão ampla do funcionamento de aplicações e possíveis brechas de segurança. <br><br>
@@ -65,7 +65,7 @@ const membersData = {
   },
   5: {
     name: 'Raphael Tavares',
-    image: './img/google.png',
+    image: './img/icone-avatar.png',
     description: `Sou Raphael Tavares, tenho 20 anos e estou em formação na área de Tecnologia da Informação, com forte interesse nas áreas de Segurança da Informação, Data Science e Compliance. Atualmente, curso Sistemas de Informação, Data Science e Auxiliar Técnico em SOC, ampliando meus conhecimentos em análise de dados, segurança cibernética e governança de TI. <br><br>
 
     Possuo experiências anteriores em Desenvolvimento Full Stack, API Connect e Inteligência Artificial, o que me proporciona uma visão integrada de sistemas, aplicações e seus riscos. Essa base técnica sólida fortalece minha atuação nas áreas de proteção de dados, conformidade regulatória e tomada de decisões baseada em dados. <br><br>
@@ -74,7 +74,7 @@ const membersData = {
   },
   6: {
     name: 'Yasmin Rufino',
-    image: './img/google.png',
+    image: './img/icone-avatar.png',
     description: `Profissional em formação na área de Segura cibernética, atualmente cursando Auxiliar Técnico de SOC. Tenho conhecimentos introdutórios em HTML e CSS, adquirido através do curso “Meu Primeiro Site”, o que contribui para uma compreensão mais ampla de estruturas web e suas possíveis vulnerabilidades. <br><br>
 
     Demonstro interesse e dedicação no aprendizado contínuo de ferramentas e práticas voltadas à detecção e resposta a incidentes de segurança, atuando com foco em ambientes de operações de segurança (SOC). Busco oportunidades para iniciar minha carreira na área de TI, especialmente em funções relacionadas à segurança da informação e proteção de dados.`
@@ -267,5 +267,33 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const summaryModal = document.getElementById('video-summary-modal');
+    const openSummaryBtn = document.getElementById('open-summary-btn');
+    
+    if (summaryModal && openSummaryBtn) {
+        const closeSummaryBtn = summaryModal.querySelector('.close-button');
+
+        const openModal = () => {
+            summaryModal.classList.add('active');
+            body.classList.add('modal-open');
+        };
+
+        const closeModalFunc = () => {
+            summaryModal.classList.remove('active');
+            body.classList.remove('modal-open');
+        };
+
+        openSummaryBtn.addEventListener('click', openModal);
+        closeSummaryBtn.addEventListener('click', closeModalFunc);
+
+        summaryModal.addEventListener('click', (event) => {
+            if (event.target === summaryModal) {
+                closeModalFunc();
+            }
+        });
     }
 });

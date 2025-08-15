@@ -235,6 +235,9 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     flex: 1;
     max-width: 50%;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .video-container {
@@ -244,6 +247,7 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
     overflow: hidden;
     max-width: 100%;
     border-radius: 8px;
+    width: 100%;
 }
 
 .video-container iframe {
@@ -752,6 +756,43 @@ body.modal-open main, body.modal-open footer, body.modal-open header {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.summary-button {
+    background-color: var(--primary-dark-color);
+    color: var(--light-text-color);
+    cursor: pointer;
+    padding: 12px 24px;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-primary-color-light);
+    margin-top: 25px;
+}
+
+.summary-button:hover {
+    background-color: #00086a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-primary-color-medium);
+}
+
+#video-summary-modal .modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-summary-text p {
+    text-align: justify;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.modal-summary-text p:last-child {
+    margin-bottom: 0;
 }
 
 

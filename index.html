@@ -18,7 +18,7 @@
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre-ferramenta">Sobre a ferramenta</a></li>
-                    <li><a href="#sobre-projeto">Sobre o Projeto</a></li>
+                    <li><a href="#sobre-projeto">Implementações do Projeto</a></li>
                     <li><a href="#sobre-nos">Sobre nós</a></li>
                 </ul>
             </nav>
@@ -62,19 +62,20 @@
         <section id="sobre-ferramenta" class="software-section">
             <div class="software-text">
                 <h1>Sobre a Ferramenta</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit molestiae laboriosam excepturi, reprehenderit magnam ullam consectetur aliquam perspiciatis dicta adipisci dignissimos vero reiciendis perferendis molestias quo praesentium, officiis obcaecati explicabo.</p> <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima natus, unde assumenda fugit aut esse, ut velit a veritatis pariatur eum quos fugiat illo delectus! Veritatis suscipit recusandae sed pariatur.</p>
+                <p>H.A.D.E.S é uma plataforma de segurança cibernética para detecção e mitigação proativa de vazamentos furtivos de dados sensíveis. Utiliza Threat Hunting e monitoramento contínuo, varrendo redes públicas, privadas e darknet. Analisa riscos, define respostas estratégicas e fornece relatórios executivos. Reduz riscos digitais, apoia conformidade com LGPD, ISO 27001 e NIST e otimiza operações por automação.</p> <br>
+                <p>Indicado para empresas e órgãos que lidam com dados coorporativos. Diferenciais: tecnologia própria, alta escalabilidade, baixo custo, integração com sistemas existentes e arquitetura modular adaptável.</p> <br>
+                <p>H.A.D.E.S também oferece inteligência preventiva, identificando padrões suspeitos antes que causem danos. Sua arquitetura modular permite rápida adaptação a novos cenários de ameaça, mantendo as organizações preparadas e protegidas contra vazamentos e ataques complexos.</p>
             </div>
             <div class="software-video">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_fuimO6ErKI?si=Wxxap88k1zG9hO_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YqDoq54kljA?si=wV1d89sJHZNOXDvZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+                <button id="open-summary-btn" class="summary-button">Resumo do Vídeo</button>
             </div>
         </section>
 
         <section class="carousel-section">
-            <h1 id="sobre-projeto" class="carousel-title">Sobre o Projeto</h1>
+            <h1 id="sobre-projeto" class="carousel-title">Implementações do Projeto</h1>
             <div class="carousel-container">
                 <button class="carousel-button carousel-button--left">
                     <img src="https://img.icons8.com/ios-filled/50/000000/chevron-left.png" alt="Anterior">
@@ -129,7 +130,7 @@
                         <li class="carousel-slide">
                             <div class="carousel-card">
                                 <div class="carousel-image-container">
-                                    <img src="https://placehold.co/600x400/2a7aed/FFFFFF?text=Desenvolvimento" alt="Imagem do Projeto 5">
+                                    <img src="./img/desenvolvimento-python-banner.jpg" alt="Imagem do Projeto 5">
                                 </div>
                                 <div class="carousel-text-content">
                                     <h3>Integração de Sistemas</h3>
@@ -140,7 +141,7 @@
                         <li class="carousel-slide">
                             <div class="carousel-card">
                                 <div class="carousel-image-container">
-                                    <img src="https://placehold.co/600x400/121212/FFFFFF?text=Proteção" alt="Imagem do Projeto 6">
+                                    <img src="./img/dados-nuvem-banner.jpg" alt="Imagem do Projeto 6">
                                 </div>
                                 <div class="carousel-text-content">
                                     <h3>Backup em Nuvem</h3>
@@ -216,7 +217,7 @@
                     <ul class="footer-links-list">
                         <li><a href="#inicio">Início</a></li>
                         <li><a href="#sobre-ferramenta">Sobre a ferramenta</a></li>
-                        <li><a href="#sobre-projeto">Sobre o Projeto</a></li>
+                        <li><a href="#sobre-projeto">Implementações do Projeto</a></li>
                         <li><a href="#sobre-nos">Sobre Nós</a></li>
                         <li><a href="#download-section">Download</a></li>
                     </ul>
@@ -246,6 +247,18 @@
             <div id="modal-member-img" class="modal-img"></div>
             <h2 id="modal-member-name"></h2>
             <p id="modal-member-desc"></p>
+        </div>
+    </div>
+
+    <div id="video-summary-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button">×</button>
+            <h2>Resumo do Vídeo</h2>
+            <div class="modal-summary-text">
+                <p><strong>Cibersegurança Proativa:</strong> A caça a ameaças é uma abordagem ofensiva e proativa à cibersegurança. Ao contrário das defesas tradicionais que reagem a alertas ou bandeiras vermelhas, a caça a ameaças busca ativamente por ameaças cibernéticas antes que elas causem danos significativos.</p>
+                <p><strong>Foco na Prevenção:</strong> O vídeo destaca que a maioria das defesas cibernéticas se concentra no rescaldo de um ataque. A caça a ameaças, no entanto, visa encontrar ataques potenciais enquanto eles estão acontecendo, com base na hipótese de onde um invasor pode tentar comprometer um ambiente.</p>
+                <p><strong>Processo Orientado por Hipóteses:</strong> A caça a ameaças começa com uma hipótese sobre potenciais vulnerabilidades ou atividades maliciosas em um ambiente. A "caçada" é então conduzida para reunir evidências para apoiar ou refutar essa hipótese.</p>
+            </div>
         </div>
     </div>
 
